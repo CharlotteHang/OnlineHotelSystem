@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="description" content="Hotel Management">
+	<meta name="author" content="group_35">
+	<title>Hotel Management</title>
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" href="styles/main.css">
+
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+	<script src="https://kit.fontawesome.com/5f9dccb469.js"></script>
+
+</head>
+<body style="color: #f6f6f6">
+<header class="top-header" style="background: #1a237e">
+	<nav class="nav navbar-nav mr-auto">
+		<ul class="navbar-nav mr-auto">
+			<li>
+				<a id="nav-link" class="nav-link" style="color: #ffffff" href="./">Home</a>
+			</li>
+		</ul>
+	</nav>
+	<span id="welcome-msg"></span>
+	<span id="navbar-text" class="navbar-text"><a id="logout-link" href="logout">LOGOUT</a> </span>
+<!--	<div style="display: flex; justify-content: right">-->
+<!--		<a class="pull-right" id="logout-link" href="logout">LOGOUT</a> <i id="avatar" class="avatar fa fa-user fa-2x"></i>-->
+<!--	</div>-->
+</header>
+
+<div class="container">
+	<header style="height: 160px;">
+		<h1 style="padding-top: 100px; color: #000051">
+			Welcome to AA Hotel!
+		</h1>
+	</header>
+
+
+
+	<section class="main-section">
+
+		<div class="container" id="log-in-container">
+			<form id="login-form" style="width: 40%;">
+				<div class="form-group">
+					<label for="username" class="login-labels">Username:</label>
+					<input id="username" class="form-control" name="username" type="text" placeholder="username">
+				</div>
+				<div>
+					<label for="password" class="login-labels">Password:</label>
+					<input id="password" class="form-control" name="password" type="password" type="text" placeholder="password">
+				</div>
+				<div id="log-in-buttons" style="margin-top: 10px;">
+					<button type="button" class="btn btn-primary btn-sm" id="login-btn">Login</button>
+					<button type="button" class="btn btn-secondary btn-sm" id="link-register-btn">Register</button>
+					<span><a id="change-password">Change Password</a></span>
+<!--					<button type="button" class="btn btn-light btn-sm" id="change-password">Change Password</button>-->
+				</div>
+				<p id="login-error"></p>
+			</form>
+		</div>
+
+		<div class="container">
+			<form id="new-password-form" style="width: 40%">
+				<div class="form-group">
+					<label for="exist_username" class="login-labels">Username:</label>
+					<input id="exist_username" class="form-control" name="exist_username" type="text">
+				</div>
+				<div class="form-group">
+					<label for="old_password" class="login-labels">Old password:</label>
+					<input id="old_password" class="form-control" name="new_password" type="text">
+				</div>
+				<div class="form-group">
+					<label for="new_password" class="login-labels">New password:</label>
+					<input id="new_password" class="form-control" name="new_password" type="text">
+				</div>
+				<div id="password-buttons" style="margin-top: 10px;">
+					<button type="button" class="btn btn-primary btn-sm" id="new-password-save">Save Password</button>
+					<button type="button" class="btn btn-secondary btn-sm" id="link-back-to-login-btn">Back to Login</button>
+				</div>
+				<p id="new-password-error"></p>
+			</form>
+		</div>
+
+		<div class="container" id="">
+			<form id="register-form" style="width: 40%">
+				<div class="form-group">
+					<label for="reg_username" class="login-labels">Username:</label>
+					<input id="reg_username" class="form-control" name="reg_username" type="text">
+				</div>
+				<div class="form-group">
+					<label for="reg_password" class="login-labels">Password:</label>
+					<input id="reg_password" class="form-control" name="reg_password" type="password">
+				</div>
+				<div class="form-group">
+					<label for="reg_firstname" class="login-labels">Name:</label>
+					<input id="reg_firstname" class="form-control" name="reg_firstname" type="text">
+				</div>
+				<div class="form-group">
+					<label for="reg_lastname" class="login-labels">PhoneNumber:</label>
+					<input id="reg_lastname" class="form-control" name="reg_lastname" type="text">
+				</div>
+<!--				<div class="panel-body">-->
+<!--					<div class="radio">-->
+<!--						<label>-->
+<!--							<input type="radio" name="identity" id="customer" checked>Customer-->
+<!--						</label>-->
+<!--						<label>-->
+<!--							<input type="radio" name="identity" id="shop">Supplier-->
+<!--						</label>-->
+<!--					</div>-->
+<!--				</div>-->
+				<div id="registration-buttons" style="margin-top: 10px;">
+					<button type="button" class="btn btn-primary btn-sm" id="register-btn">Register</button>
+					<button type="button" class="btn btn-secondary btn-sm" id="link-back-to-login-btn2">Back to Login</button>
+				</div>
+				<p id="register-error"></p>
+			</form>
+		</div>
+
+
+		<aside id="item-nav">
+			<div class="nav-icon">
+				<i class="fas fa-bars"></i>
+			</div>
+			<nav class="main-nav">
+
+				<a href="#" id="user-m" class="main-nav-btn"> User Management </a>
+				<a href="#" id="plan-m" class="main-nav-btn"> Plan Management </a>
+				<a href="#" id="poi-m" class="main-nav-btn"> POI Management </a>
+				<a href="#" id="room-m" class="main-nav-btn"> All Rooms </a>
+				<a href="#" id="manager-m" class="main-nav-btn"> Manager Information </a>
+				<a href="#" id="user-rooms" class="main-nav-btn"> Available Rooms </a>
+				<a href="#" id="user-reservations" class="main-nav-btn"> Your Reservations </a>
+				<a href="#" id="user-itineraries" class="main-nav-btn"> Travel Itineraries </a>
+
+			</nav>
+		</aside>
+
+		<div id="createPlan">
+			<button type="button" class="btn btn-success btn-sm">
+				Create Itinerary
+			</button>
+		</div>
+		<div id="add-plan">
+			<label for="PlanID">Itinerary ID: </label>
+			<input id="PlanID" class="form-control width-edit" name="PlanID" type="text" placeholder="123456">
+
+			<label for="PlanType">Itinerary Type: </label>
+			<input id="PlanType" class="form-control width-edit" name="PlanType" type="text" placeholder="DEFAULT">
+
+			<label for="PlanSize">Party Size: </label>
+			<input id="PlanSize" class="form-control width-edit" name="PlanSize" type="text" placeholder="0">
+
+
+			<label for="PlanContent">Content ID: </label>
+			<input id="PlanContent" class="form-control width-edit" name="PlanContent" type="text" placeholder="789123">
+
+			<button type="button" class="btn btn-primary btn-sm" id="plan-btn">Create</button>
+
+		</div>
+
+		<div id="sort-buttons">
+			<div id="user-sort">
+				<button type="button" class="btn btn-primary btn-sm" id="sort-by-price-asc-u">Sort by Price Ascending <i class="fas fa-sort-amount-up-alt"></i></button>
+				<button type="button" class="btn btn-primary btn-sm" id="sort-i-by-size-asc">Sort by Party Size <i class="fas fa-sort-amount-up-alt"></i></button>
+			</div>
+			<div id="manager-sort">
+				<button type="button" class="btn btn-primary btn-sm" id="sort-by-price-asc-m">Sort by Price Ascending <i class="fas fa-sort-amount-up-alt"></i></button>
+			</div>
+		</div>
+		<div id="list-headings">
+			<ul id="user-available-rooms" class="list-headings-styles">
+				<li class="list-titles">
+					<span class="list-span">Room #</span>
+					<span class="list-span">Type</span>
+					<span class="list-span">Price</span>
+					<span class="list-span">Status</span>
+					<span class="list-span"></span>
+				</li>
+			</ul>
+			<ul id="user-reservations-headings" class="list-headings-styles">
+				<li class="list-titles">
+					<span class="list-span">Room No.</span>
+					<span class="list-span">Type</span>
+					<span class="list-span">Price</span>
+					<span class="list-span">Check-in Date</span>
+					<span class="list-span">Check-out Date</span>
+				</li>
+			</ul>
+			<ul id="user-itineraries-headings" class="list-headings-styles">
+				<li class="list-titles">
+					<span class="list-span">Itinerary ID</span>
+					<span class="list-span">Type</span>
+					<span class="list-span">Party Size</span>
+					<span class="list-span">Points of Interest</span>
+				</li>
+			</ul>
+			<ul id="manager-all-users" class="list-headings-styles">
+				<li class="list-titles">
+					<span class="list-span">Name</span>
+					<span class="list-span">All Booked Itineraries</span>
+					<span class="list-span">Address</span>
+					<span class="list-span">Phone No.</span>
+					<span class="list-span">Points</span>
+				</li>
+			</ul>
+			<ul id="manager-all-itineraries" class="list-headings-styles">
+				<li class="list-titles">
+					<span class="list-span">Itinerary ID</span>
+					<span class="list-span">Type</span>
+					<span class="list-span">Party Size</span>
+					<span class="list-span">Points of Interest</span>
+					<span class="list-span">No. of Guest Bookings</span>
+					<span class="list-span"></span>
+				</li>
+			</ul>
+			<ul id="manager-all-pois" class="list-headings-styles">
+				<li class="list-titles">
+					<span class="list-span">Point of Interest</span>
+					<span class="list-span">Duration of Trip</span>
+					<span class="list-span">Base Price</span>
+				</li>
+			</ul>
+			<ul id="manager-all-rooms" class="list-headings-styles">
+				<li class="list-titles">
+					<span class="list-span">Room No.</span>
+					<span class="list-span">Type</span>
+					<span class="list-span">Price</span>
+					<span class="list-span">Status</span>
+					<span class="list-span">Staff on Duty</span>
+				</li>
+			</ul>
+			<ul id="manager-info" class="list-headings-styles">
+				<li class="list-titles">
+					<span class="list-span">Name</span>
+					<span class="list-span">Phone No.</span>
+				</li>
+			</ul>
+		</div>
+
+		<ul id="item-list">
+
+			<li class="item">
+				<div>
+					<h1>Welcome!</h1>
+				</div>
+
+			</li>
+		</ul>
+
+	</section>
+</div>
+
+<script src="https://rawgit.com/emn178/js-md5/master/build/md5.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="scripts/main.js"></script>
+</body>
+</html>
